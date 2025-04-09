@@ -249,24 +249,28 @@ int main() {
             case 6: {
                 while (getchar() != '\n');
 
-                int smile = 0, cheer = 0;
+                int smile = -1, cheer = -1;
                 printf("Enter a smile and cheer number:\n");
 
                 do {
-                    int result = scanf("smile: %d, cheer: %d", &smile, &cheer);
+                    smile = cheer = -1;
+                    scanf("smile: %d, cheer: %d", &smile, &cheer);
 
-                    if (result != 2 || smile <= 0 || cheer <= 0 || smile == cheer) {
+                    if (smile <= 0 || cheer <= 0 || smile == cheer) {
                         while (getchar() != '\n');
                         printf("Only 2 different positive numbers in the given format are allowed for the festival, please try again:\n");
                     }
 
                 } while (smile <= 0 || cheer <= 0 || smile == cheer);
 
-                int maxNum;
+                int maxNum = -1;
                 printf("Enter maximum number for the festival:\n");
 
                 do {
-                    if (scanf("%d", &maxNum) != 1 || maxNum <= 0) {
+                    maxNum = -1;
+                    scanf("%d", &maxNum);
+
+                    if (maxNum <= 0) {
                         while (getchar() != '\n');
                         printf("Only positive maximum number is allowed, please try again:\n");
                     }
@@ -286,6 +290,7 @@ int main() {
 
                 break;
             }
+
 
             case 7:
                 while (getchar() != '\n');
