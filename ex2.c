@@ -210,7 +210,7 @@ int main() {
 
                 printf("Between 1 and %d only these numbers bring happiness:", number);
 
-                for (int i = 1; i < number; i++) {
+                for (int i = 1; i <= number; i++) {
                     int isHappy = 0;
                     int num = i;
 
